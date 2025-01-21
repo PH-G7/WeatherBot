@@ -1,19 +1,17 @@
-# TwitchWeather
-Twitch bot which displays weather information of any town
+# WeatherBot
+A more advanced version of [TwitchWeather](https://github.com/tomaarsen/TwitchWeather) by tomaarsen.
 
 ---
 
 # Explanation
 
-When the bot has started, it will start listening to chat messages in the channel listed in the settings.txt file. Whenever a user types `!weather <city>` in chat, the bot will respond with precise weather information in that city. 
+When the bot has started, it will start listening to chat messages in the channel listed in the settings.txt file. Whenever a user types `!wx <city>` or one of the other commands in chat, the bot will respond with precise weather information in that city. If the user doesn't provide a city, the home city set in settings.txt will be used.
 
 ---
 
 # Usage
-Command:
-<pre><b>!weather &lt;city&gt;</b></pre>
-For example:
-<pre><b>!weather Toronto<br>19.6°C/69°F, 68.0% humidity, with overcast clouds in Toronto, CA.</b></pre>
+Commands:
+<pre><b>!wx (general weather report)<br>!wxtemp (temperature)<br>!wxchill (windchill)<br>!wxpress (air pressure)<br>!wxhumid (humidity)<br>!wxvis (visibility)<br>!wxwind (wind speed, direction,  gust)<br>!wxcloud (cloud cover)<br>!wxrain (rain rate)<br>!wxsnow (snow rate)<br>!wxinfo (info message that explains how the bot works)</b></pre>
 
 ---
 
@@ -27,6 +25,7 @@ This bot is controlled by a settings.txt file, which looks like:
     "Nickname": "<name>",
     "Authentication": "oauth:<auth>",
     "OWMKey": "<OpenWeatherMap api key>"
+    "Home": "<Home Location>"
 }
 ```
 
@@ -38,41 +37,14 @@ This bot is controlled by a settings.txt file, which looks like:
 | Nickname             | The Username of the bot account.                                  | "CubieB0T" |
 | Authentication       | The OAuth token for the bot account.                              | "oauth:pivogip8ybletucqdz4pkhag6itbax" |
 | OWMKey | The OpenWeatherMap API Key. Get your own free key [here](https://openweathermap.org/appid). | "9a8nec2aydmm5q6kjr01ajm5zvgjcyv0" |
+| Home                 | The location you want to use for the default weather location     | "Los Angeles, CA, US" |
 
 *Note that the example OAuth token is not an actual token, nor is the OWMKey an actual API key, but merely a generated string to give an indication what it might look like.*
 
-I got my real OAuth token from https://twitchapps.com/tmi/.
+I got my real OAuth token from https://twitchtokengenerator.com/.
 
 ---
 
 # Requirements
 * [Python 3.6+](https://www.python.org/downloads/)
-* [Module requirements](requirements.txt)<br>
-Install these modules using `pip install -r requirements.txt`
-
-Among these modules is my own [TwitchWebsocket](https://github.com/CubieDev/TwitchWebsocket) wrapper, which makes making a Twitch chat bot a lot easier.
-This repository can be seen as an implementation using this wrapper.
-
----
-
-# Other Twitch Bots
-
-* [TwitchMarkovChain](https://github.com/CubieDev/TwitchMarkovChain)
-* [TwitchAIDungeon](https://github.com/CubieDev/TwitchAIDungeon)
-* [TwitchGoogleTranslate](https://github.com/CubieDev/TwitchGoogleTranslate)
-* [TwitchCubieBotGUI](https://github.com/CubieDev/TwitchCubieBotGUI)
-* [TwitchCubieBot](https://github.com/CubieDev/TwitchCubieBot)
-* [TwitchRandomRecipe](https://github.com/CubieDev/TwitchRandomRecipe)
-* [TwitchUrbanDictionary](https://github.com/CubieDev/TwitchUrbanDictionary)
-* [TwitchRhymeBot](https://github.com/CubieDev/TwitchRhymeBot)
-* [TwitchWeather](https://github.com/CubieDev/TwitchWeather)
-* [TwitchDeathCounter](https://github.com/CubieDev/TwitchDeathCounter)
-* [TwitchSuggestDinner](https://github.com/CubieDev/TwitchSuggestDinner)
-* [TwitchPickUser](https://github.com/CubieDev/TwitchPickUser)
-* [TwitchSaveMessages](https://github.com/CubieDev/TwitchSaveMessages)
-* [TwitchMMLevelPickerGUI](https://github.com/CubieDev/TwitchMMLevelPickerGUI) (Mario Maker 2 specific bot)
-* [TwitchMMLevelQueueGUI](https://github.com/CubieDev/TwitchMMLevelQueueGUI) (Mario Maker 2 specific bot)
-* [TwitchPackCounter](https://github.com/CubieDev/TwitchPackCounter) (Streamer specific bot)
-* [TwitchDialCheck](https://github.com/CubieDev/TwitchDialCheck) (Streamer specific bot)
-* [TwitchSendMessage](https://github.com/CubieDev/TwitchSendMessage) (Meant for debugging purposes)
-
+* [TwitchWebsocket](https://github.com/CubieDev/TwitchWebsocket) by tomaarsen
