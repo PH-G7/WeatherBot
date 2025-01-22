@@ -2,10 +2,10 @@ from TwitchWebsocket import TwitchWebsocket
 import json, requests, random, logging
 
 from enum import Enum, auto
-from Log import Log
+from Log import Log # type: ignore
 Log(__file__)
 
-from Settings import Settings
+from Settings import Settings # type: ignore
 
 class ResultCode(Enum):
     SUCCESS = auto()
