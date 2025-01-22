@@ -294,6 +294,11 @@ class TwitchWeather:
 
         except Exception as e:
             logging.exception(e)
+
+    def deg_to_compass(self, num):
+        val=int((num/22.5)+.5)
+        arr=["N","NNE","NE","ENE","E","ESE", "SE", "SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"]
+        return arr[(val % 16)]
            
 
     def fetch_weather(self, location):
@@ -466,15 +471,17 @@ class TwitchWeather:
             if "gust" in data["wind"]:
                 speedkmh = float(data["wind"]["speed"])*3.6
                 speedmih = speedkmh * 0.621371
-                direction = float(data["wind"]["deg"])
+                degree = float(data["wind"]["deg"])
+                direction = self.deg_to_compass(degree)
                 gustkmh = float(data["wind"]["gust"])*3.6
                 gustmih = gustkmh * 0.621371
-                out = f"The wind is blowing from {direction:.0f}° at {speedmih:.1f} mi/h ({speedkmh:.1f} km/h) gusting to {gustmih:.1f} mi/h ({gustkmh:.1f} km/h)."
+                out = f"The wind is blowing from {degree:.0f}° ({direction}) at {speedmih:.1f} mi/h ({speedkmh:.1f} km/h) gusting to {gustmih:.1f} mi/h ({gustkmh:.1f} km/h)."
             else:
                 speedkmh = float(data["wind"]["speed"])*3.6
                 speedmih = speedkmh * 0.621371
-                direction = float(data["wind"]["deg"])
-                out = f"The wind is blowing from {direction:.0f}° at {speedmih:.1f} mi/h ({speedkmh:.1f} km/h)."
+                degree = float(data["wind"]["deg"])
+                direction = self.deg_to_compass(degree)
+                out = f"The wind is blowing from {degree:.0f}° ({direction}) at {speedmih:.1f} mi/h ({speedkmh:.1f} km/h)."
             return out, ResultCode.SUCCESS
         
         # If some other error (eg. api limit exceeded)
