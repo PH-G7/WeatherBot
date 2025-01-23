@@ -393,7 +393,7 @@ class TwitchWeather:
             inHg = hPa * .02953
             hPaGrnd = float(data["main"]["grnd_level"])
             inHgGrnd = hPaGrnd * .02953
-            out = f"The pressure is {hPa:.0f}hPa/{inHg:.2f}mm Hg at sea level {hPaGrnd:.0f}hPa/{inHgGrnd:.2f}mm Hg at ground level."
+            out = f"The pressure is {hPa:.0f}hPa/{inHg:.2f}in Hg at sea level {hPaGrnd:.0f}hPa/{inHgGrnd:.2f}in Hg at ground level."
             
             return out, ResultCode.SUCCESS
         
