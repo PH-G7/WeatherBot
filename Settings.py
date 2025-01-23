@@ -5,7 +5,7 @@ logger = logging.getLogger(__name__)
 class Settings:
     """ Loads data from settings.txt into the bot """
 
-    PATH = os.path.join(os.getcwd(), "settings.txt")
+    PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "settings.txt")
 
     def get_settings(self):
         logger.debug("Loading settings.txt file...")
