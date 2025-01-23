@@ -5,4 +5,5 @@
     "Nickname": "<name>",
     "Authentication": "oauth:<auth>",
     "OWMKey": "<OpenWeatherMap api key>"
+    "Home": "<Home Location>"
 }
