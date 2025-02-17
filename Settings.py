@@ -33,7 +33,8 @@ class Settings:
                                     "Channel": "#<channel>",
                                     "Nickname": "<name>",
                                     "Authentication": "oauth:<auth>",
-                                    "OWMKey": "<OpenWeatherMap api key>"
+                                    "OWMKey": "<OpenWeatherMap api key>",
+                                    "Home": "<Home Location>"
                                 }
                 f.write(json.dumps(standard_dict, indent=4, separators=(',', ': ')))
                 raise ValueError("Please fix your settings.txt file that was just generated.")
