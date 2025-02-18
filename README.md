@@ -5,7 +5,7 @@ A more advanced version of [TwitchWeather](https://github.com/tomaarsen/TwitchWe
 
 # Explanation
 
-When the bot has started, it will start listening to chat messages in the channel listed in the settings.txt file. Whenever a user types `!wx <city>` or one of the other commands in chat, the bot will respond with precise weather information in that city. If the user doesn't provide a city, the home city set in settings.txt will be used.
+When the bot has started, it will listen to chat messages in the channel listed in the settings.txt file. Whenever a user types `!wx <city>` or one of the other commands in chat, the bot will respond with precise weather information in that city. If the user doesn't provide a city, the home city set in settings.txt will be used.
 
 ---
 
@@ -39,7 +39,7 @@ This bot is controlled by a settings.txt file, which looks like:
 | OWMKey | The OpenWeatherMap API Key. Get your own free key [here](https://openweathermap.org/appid). | "9a8nec2aydmm5q6kjr01ajm5zvgjcyv0" |
 | Home                 | The location you want to use for the default weather location     | "Los Angeles, CA, US" |
 
-*Note that the example OAuth token is not an actual token, nor is the OWMKey an actual API key, but merely a generated string to give an indication what it might look like.*
+*Note that the example OAuth token is not an actual token, nor is the OWMKey an actual API key, but merely a generated string to indicate what it might look like.*
 
 I got my real OAuth token from https://twitchtokengenerator.com/.
 
